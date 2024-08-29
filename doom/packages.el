@@ -103,4 +103,4 @@
     :recipe (:host gitlab :repo "OlMon/consult-projectile" :branch "master"))
   )
 
-;; (package! symbol-overlay :recipe (:host github :repo "wolray/symbol-overlay"))
+(package! symbol-overlay :recipe (:host github :repo "wolray/symbol-overlay"))

@@ -29,7 +29,7 @@
       ;;   (global-hide-mode-line-mode 1))
       )
   ;; terminal mode
-  (setq doom-theme 'doom-dark+)
+  (setq doom-theme 'tsdh-dark)
   )
 
 ;; (after! dap-mode
