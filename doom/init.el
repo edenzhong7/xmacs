@@ -115,7 +115,7 @@
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
        ;; (cc +lsp +tree-sitter)         ; C > C++ == 1
-       ;;(clojure +lsp)          ; java with a lisp
+       (clojure +lsp)          ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
@@ -141,7 +141,7 @@
        ;;idris             ; a language you can depend on
        (json +lsp +tree-sitter)              ; At least it ain't XML
        ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
-       ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
+       (javascript +lsp +tree-sitter)        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        ;;(latex +latexmk +cdlatex +lsp +fold +pdf-tools +preview-pane)             ; writing papers in Emacs has never been so fun
@@ -173,7 +173,7 @@
        rest              ; Emacs as a REST client
                                         ;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;; rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       (rust +lsp +tree-sitter)              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;; (scheme +guile)   ; a fully conniving family of lisps
        (sh +lsp +tree-sitter)               ; she sells {ba,z,fi}sh shells on the C xor
