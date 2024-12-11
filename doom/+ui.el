@@ -21,11 +21,13 @@
       ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
       ;;   presentations or streaming.  ;; ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd ;; font string. You generally only need these two:
       ;;   intsll: /bin/bash -c '$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)'
-      (setq doom-font (font-spec :family "JetBrains Mono" :size 22 :height 1.8)
-            doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 22 :height 1.8)
-            doom-big-font (font-spec :family "JetBrains Mono" :size 22 :height 1.8))	;; are the three important ones:
-      (add-hook 'after-init-hook (lambda ()
-                                   (text-scale-set 2)))  ; 缩放比例为 1
+      (when (getenv "WSL_DISTRO_NAME") 
+        (setq doom-font (font-spec :family "JetBrains Mono" :size 22 :height 1.8)
+              doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 22 :height 1.8)
+              doom-big-font (font-spec :family "JetBrains Mono" :size 22 :height 1.8))	;; are the three important ones:
+        (add-hook 'after-init-hook (lambda ()
+                                     (text-scale-set 2)))  ; 缩放比例为 2
+        )
       ;; (after! evil
       ;;   (custom-set-faces '(cursor ((t (:background "#009999" :foreground "#222222")))))
       ;;   (setq evil-normal-state-cursor '(box "dark red")

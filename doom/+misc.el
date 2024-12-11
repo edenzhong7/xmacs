@@ -342,15 +342,15 @@
   (setq codeium/document/text 'my-codeium/document/text)
   (setq codeium/document/cursor_offset 'my-codeium/document/cursor_offset))
 
-(use-package symbol-overlay
-  :hook (prog-mode . symbol-overlay-mode)  ; 在编程模式下自动启用
-  :config
-  ;; 配置快捷键
-  (map! :map symbol-overlay-mode-map
-        :n "m" #'symbol-overlay-put
-        :n "n" #'symbol-overlay-switch-forward
-        :n "p" #'symbol-overlay-switch-backward
-        :n "C-g" #'symbol-overlay-remove-all))
+;; (use-package symbol-overlay
+;;   :hook (prog-mode . symbol-overlay-mode)  ; 在编程模式下自动启用
+;;   :config
+;;   ;; 配置快捷键
+;;   (map! :map symbol-overlay-mode-map
+;;         :n "m" #'symbol-overlay-put
+;;         :n "n" #'symbol-overlay-switch-forward
+;;         :n "p" #'symbol-overlay-switch-backward
+;;         :n "C-g" #'symbol-overlay-remove-all))
 
 (use-package! origami
   :hook (prog-mode . origami-mode) ;; 启用 origami 模式
@@ -371,6 +371,7 @@
   (setq lsp-origami-auto-enable t)) ;; 自动启用 origami 折叠
 
 (after! evil
+  (define-key evil-insert-state-map (kbd "C-y") 'yank)
   (setq evil-fold-list nil)) ;; 禁用 Doom 的默认折叠机制
 
 
