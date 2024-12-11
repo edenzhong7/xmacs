@@ -46,7 +46,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
                                         ;(unpin! t)
 ;; (package! flycheck-inline)
-;; (package! smart-hungry-delete)
+(package! smart-hungry-delete)
 (package! move-text)
 ;; (package! parrot)
 ;;(package! youdao-dictionary)
@@ -83,15 +83,6 @@
   :recipe (:host github
            :repo "Exafunction/codeium.el"))
 
-(when (featurep! :term eshell)
-  (package! esh-autosuggest)
-  )
-
-(when (featurep! :tools debugger +lsp)
-  (package! dap-mode-launch-json
-    :recipe (:host github :repo "nbfalcon/dap-mode-launch-json"))
-  )
-
 (when (featurep! :lang org +roam2)
   (unpin! org-roam)
   (package! org-roam-ui)
@@ -104,3 +95,6 @@
   )
 
 (package! symbol-overlay :recipe (:host github :repo "wolray/symbol-overlay"))
+
+(package! origami)
+(package! lsp-origami)

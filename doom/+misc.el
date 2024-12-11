@@ -352,5 +352,36 @@
         :n "p" #'symbol-overlay-switch-backward
         :n "C-g" #'symbol-overlay-remove-all))
 
+(use-package! origami
+  :hook (prog-mode . origami-mode) ;; 启用 origami 模式
+  :config
+  (map! :map origami-mode-map
+        "C-c o o" #'origami-toggle-node  ;; 折叠/展开当前节点
+        "C-c o O" #'origami-toggle-all-nodes ;; 折叠/展开所有节点
+        "C-c o c" #'origami-close-node ;; 折叠当前节点
+        "C-c o C" #'origami-close-all-nodes ;; 折叠所有节点
+        "C-c o x" #'origami-open-node ;; 展开当前节点
+        "C-c o X" #'origami-open-all-nodes ;; 展开所有节点
+        ))
+
+(use-package! lsp-origami
+  :after (lsp-mode origami)
+  :hook (lsp-after-open . lsp-origami-try-enable) ;; 打开文件后自动启用 origami 支持
+  :config
+  (setq lsp-origami-auto-enable t)) ;; 自动启用 origami 折叠
+
+(after! evil
+  (setq evil-fold-list nil)) ;; 禁用 Doom 的默认折叠机制
+
+
+(use-package! dap-mode
+  :config
+  (dap-auto-configure-mode)) ;; 确保自动配置调试器
+(use-package! dap-dlv-go
+  :after dap-mode
+  :config
+  (require 'dap-dlv-go)) ;; 确保加载 dap-dlv-go
+
+
 (provide '+misc)
 ;;; +misc.el
