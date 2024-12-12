@@ -79,9 +79,9 @@
 (package! color-rg
   :recipe (:host github
            :repo "manateelazycat/color-rg"))
-(package! codeium
-  :recipe (:host github
-           :repo "Exafunction/codeium.el"))
+;; (package! codeium
+;;   :recipe (:host github
+;;            :repo "Exafunction/codeium.el"))
 
 (when (featurep! :lang org +roam2)
   (unpin! org-roam)
