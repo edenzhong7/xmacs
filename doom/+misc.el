@@ -78,6 +78,8 @@
   )
 
 (when (modulep! :ui treemacs)
+  (global-set-key (kbd "C-c C-o") (lambda () (interactive) (lsp-treemacs-call-hierarchy t)))
+  (global-set-key (kbd "C-c C-i") (lambda () (interactive) (lsp-treemacs-call-hierarchy nil)))
   ;; treemacs ignore files
   (setq treemacs-file-ignore-extensions
         '(;; LaTeX
@@ -272,9 +274,7 @@
         "l" #'meow-keypad-start)
   )
 
-;;(require 'ol)
 (use-package! crosshairs)
-;;(use-package! bookmark+)
 (use-package! thing-edit)
 (use-package! exec-path-from-shell)
 (use-package! color-rg)
@@ -382,6 +382,19 @@
   :after dap-mode
   :config
   (require 'dap-dlv-go)) ;; 确保加载 dap-dlv-go
+
+;; 配置 bookmark-plus
+(use-package! bookmark+
+  :config
+  (setq bmkp-last-as-first-bookmark-file "/home/edenz/.config/doom/bookmarks"
+        bmkp-bookmark-file "/home/edenz/.config/doom/bookmarks")
+
+  ;; 设置快捷键
+  (map! :leader
+        :desc "Open bookmarks menu" "m b" #'bmkp-bmenu-list-bookmarks
+        :desc "Set bookmark" "m m" #'bmkp-set-bookmark
+        :desc "Jump to bookmark" "m j" #'bmkp-jump-to-list)
+  )
 
 
 (provide '+misc)

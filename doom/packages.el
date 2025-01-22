@@ -64,7 +64,7 @@
 (package! doom-nano-modeline
   :recipe (:host github
            :repo "ronisbr/doom-nano-modeline"))
-(package! bookmark-plus
+(package! bookmark+
   :recipe (:host github
            :repo "emacsmirror/bookmark-plus"))
 (package! crosshairs
