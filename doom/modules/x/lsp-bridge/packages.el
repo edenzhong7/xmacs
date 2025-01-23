@@ -21,6 +21,6 @@
            :repo "svaante/dape"
            :branch "master"
            :files ("*.el")))
-(package! lsp-mode :disable t :ignore t)
+;;(package! lsp-mode :disable t :ignore t)
 ;; (package! dap-mode :disable t :ignore t)
 ;;(package! company :disable t :ignore t)
