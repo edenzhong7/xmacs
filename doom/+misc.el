@@ -68,7 +68,9 @@
           lsp-enable-indentation t
           lsp-enable-xref t
           lsp-enable-snippet t
+          lsp-signature-auto-activate t
           lsp-enable-file-watchers t
+          lsp-go-use-placeholders nil
           )
     (add-to-list 'lsp-file-watch-ignored-files '("[/\\\\]\\vendor\\'" "[/\\\\]\\third_party\\'" "[/\\\\]\\build\\'"))
     (setq lsp-enable-file-watchers nil)
